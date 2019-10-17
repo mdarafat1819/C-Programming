@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+
+char* revstr(char str[])
+{
+    char rstr[100];//rstr = reverse string
+    int i, len, j;
+
+    len = strlen(str);
+    len = len - 1;
+    for(i = len, j = 0; i>=0; i--,j++)
+    {
+        rstr[j] = str[i];
+    }
+    rstr[j] = '\0';
+
+    strcpy(str, rstr);
+
+    return str;
+}
+
+int main()
+{
+    char str[100];
+
+    printf("Enter a string: ");
+    gets(str);
+
+    strcpy(str, revstr(str));
+
+    printf("%s\n",str);
+
+    return 0;
+}
